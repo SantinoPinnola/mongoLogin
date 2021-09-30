@@ -1,0 +1,36 @@
+<hr />
+{{#if isLogged}}
+  <br />
+  <div class='alert alert-success alertaLogout' role='alert'>
+    <h2>Bienvenido {{this.nombre}}!</h2>
+    <form action='/logout' method='POST' autocomplete='off'>
+      <button class='btn btn-warning' id='destroy' name='destroy'>Logout</button>
+    </form>
+  </div>
+{{else}}
+  <h3>Login de Usuario</h3>
+  {{#if isDestroyed}}
+    <br />
+    <div class='alert alert-info alertaLogout' role='alert'>
+      <h3>Adios {{this.nombre}}!</h3>
+    </div>
+  {{/if}}
+  {{#if isTimedOut}}
+    <br />
+    <div class='alert alert-success alertaLogout' role='alert'>
+      <h2>Session TimeOut</h2>
+      <form action='/logout' method='POST' autocomplete='off'>
+        <button class='btn btn-warning' id='destroy' name='destroy'>Logout</button>
+      </form>
+    </div>
+  {{/if}}
+  <form action='/login' method='POST' autocomplete='off'>
+    <label>Ingrese su nombre</label>
+    <div class='form-group myForm'>
+      <input type='text' class='form-control' id='nombre' name='nombre' required />
+    </div>
+    <div class='formButton'>
+      <button class='btn btn-primary' style='align-content: flex-end;'>Enviar</button>
+    </div>
+  </form>
+{{/if}}

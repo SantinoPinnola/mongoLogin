@@ -1,0 +1,13 @@
+  <br />
+  <div class='alert alert-success alertaLogout' role='alert'>
+    <h2>Bienvenido {{this.nombre}}!</h2>
+    <form action='/logout' method='POST' autocomplete='off'>
+      <button class='btn btn-warning' id='destroy' name='destroy'>Logout</button>
+    </form>
+  </div>
+<div class="flex-container">
+     {{> productsform}}
+     <br>
+     {{> productlist}}
+</div>  
+{{> chat}}
